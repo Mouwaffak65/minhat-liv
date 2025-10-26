@@ -2,7 +2,7 @@
   "name": "منحة لايف - Minhat Live",
   "short_name": "منحة لايف",
   "description": "منصة شاملة للمنح الدراسية، فرص التدريب، الوظائف والدورات التدريبية للشباب العربي",
-  "start_url": "/",
+  "start_url": "https://minhat-livee.netlify.app/",
   "id": "/",
   
   "icons": [
@@ -163,7 +163,7 @@
 
   "scope_extensions": [
     {
-      "origin": "https://minhatlive.com"
+      "origin": "https://minhat-livee.netlify.app/"
     }
   ],
 
