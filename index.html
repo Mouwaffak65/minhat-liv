@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags pour PWA et Play Store -->
     <title>منحة لايف - فرص المنح الدراسية، التدريب، الوظائف، الدورات</title>
+    <meta name="description" content="منصة شاملة للمنح الدراسية، فرص التدريب، الوظائف والدورات التدريبية للشباب العربي">
+    <meta name="keywords" content="منح, تدريب, وظائف, دورات, تعليم, scholarships, internships, jobs, courses">
+    <meta name="theme-color" content="#1a2a3a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Balises PWA obligatoires -->
+    <meta name="application-name" content="منحة لايف">
+    <meta name="apple-mobile-web-app-title" content="منحة لايف">
+    
+    <!-- AdMob -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+    
+    <!-- Icône PWA -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset et styles de base */
@@ -326,20 +345,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .btn-ad {
-            background: linear-gradient(to right, #f39c12, #e67e22);
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-ad:hover {
-            background: linear-gradient(to right, #e67e22, #d35400);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
         /* Bannières AdMob */
         .ad-container {
             margin: 2.5rem 0;
@@ -364,61 +369,6 @@
             border-radius: 8px;
             font-weight: 500;
             font-size: 0.9rem;
-        }
-        
-        /* Modal de publicité */
-        .ad-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1100;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-        
-        .ad-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .modal-icon {
-            font-size: 3rem;
-            color: #f39c12;
-            margin-bottom: 15px;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .modal-text {
-            margin-bottom: 20px;
-            color: #7f8c8d;
-        }
-        
-        .modal-timer {
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #e74c3c;
         }
         
         /* Formulaire d'inscription */
@@ -755,8 +705,6 @@
                     <li><a href="stages.html"><i class="fas fa-briefcase"></i> <span>التدريب</span></a></li>
                     <li><a href="jobs.html"><i class="fas fa-user-tie"></i> <span>الوظائف</span></a></li>
                     <li><a href="formations.html"><i class="fas fa-laptop-code"></i> <span>الدورات</span></a></li>
-                    <li><a href="infos.html"><i class="fas fa-newspaper"></i> <span>الأخبار</span></a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>اتصل بنا</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -770,8 +718,6 @@
             <li><a href="stages.html"><i class="fas fa-briefcase"></i> التدريب</a></li>
             <li><a href="jobs.html"><i class="fas fa-user-tie"></i> الوظائف</a></li>
             <li><a href="formations.html"><i class="fas fa-laptop-code"></i> الدورات</a></li>
-            <li><a href="infos.html"><i class="fas fa-newspaper"></i> الأخبار</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
         </ul>
     </div>
 
@@ -790,7 +736,12 @@
     <div class="container">
         <div class="ad-container">
             <div class="ad-banner">
-                مساحة إعلانية - AdMob Banner
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-0000000000000000"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
             </div>
         </div>
     </div>
@@ -799,7 +750,7 @@
     <section class="container">
         <h2 class="section-title">تصفح حسب الفئة</h2>
         <div class="categories">
-            <!-- منح دراسية - مجانية -->
+            <!-- منح دراسية -->
             <div class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-university"></i>
@@ -810,20 +761,18 @@
                 </div>
             </div>
             
-            <!-- تدريب - مع إعلان -->
+            <!-- تدريب -->
             <div class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-briefcase"></i>
                 </div>
                 <h3>فرص التدريب</h3>
                 <div class="category-footer">
-                    <a href="stages.html" class="btn btn-ad show-ad-modal" data-category="internships">
-                        <i class="fas fa-play-circle"></i> شاهد إعلان لعرض التدريبات
-                    </a>
+                    <a href="stages.html" class="btn">عرض التدريبات <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
             
-            <!-- وظائف - مجانية -->
+            <!-- وظائف -->
             <div class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-user-tie"></i>
@@ -834,16 +783,14 @@
                 </div>
             </div>
             
-            <!-- دورات - مع إعلان -->
+            <!-- دورات -->
             <div class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
                 <h3>الدورات التدريبية</h3>
                 <div class="category-footer">
-                    <a href="formations.html" class="btn btn-ad show-ad-modal" data-category="courses">
-                        <i class="fas fa-play-circle"></i> شاهد إعلان لعرض الدورات
-                    </a>
+                    <a href="formations.html" class="btn">عرض الدورات <i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </div>
@@ -853,7 +800,12 @@
     <div class="container">
         <div class="ad-container">
             <div class="ad-banner">
-                مساحة إعلانية - AdMob Banner
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-0000000000000000"
+                     data-ad-slot="1234567891"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
             </div>
         </div>
     </div>
@@ -869,25 +821,6 @@
             </form>
         </div>
     </section>
-
-    <!-- Modal de publicité -->
-    <div class="ad-modal">
-        <div class="modal-content">
-            <div class="modal-icon">
-                <i class="fas fa-ad"></i>
-            </div>
-            <h2 class="modal-title">إعلان تجاري</h2>
-            <p class="modal-text">
-                شاهد هذا الإعلان للوصول إلى محتوى الفئة
-            </p>
-            <div class="modal-timer">
-                الإعلان سينتهي خلال: <span id="ad-timer">5</span> ثواني
-            </div>
-            <button id="close-ad-modal" class="btn btn-primary" disabled>
-                <i class="fas fa-spinner fa-spin"></i> جاري التحضير...
-            </button>
-        </div>
-    </div>
 
     <!-- Pied de page -->
     <footer>
@@ -924,7 +857,7 @@
             <div class="footer-column">
                 <h3>اتصل بنا</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>   باراكو، دولة بنبن </a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> باراكو، دولة بنبن</a></li>
                     <li><a href="mailto:minhatlive@gmail.com"><i class="fas fa-envelope"></i> minhatlive@gmail.com</a></li>
                     <li><a href="tel:+2290140785782"><i class="fas fa-phone"></i> +229 0140785782</a></li>
                 </ul>
@@ -965,67 +898,6 @@
             });
         });
         
-        // Script pour les publicités
-        const adModal = document.querySelector('.ad-modal');
-        const showAdButtons = document.querySelectorAll('.show-ad-modal');
-        const closeAdModal = document.getElementById('close-ad-modal');
-        const adTimer = document.getElementById('ad-timer');
-        
-        let timer = 5;
-        let countdown;
-        let currentCategory = '';
-        
-        // Ouvrir le modal de publicité
-        showAdButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                currentCategory = this.getAttribute('data-category');
-                adModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                startAdCountdown();
-            });
-        });
-        
-        // Démarrer le compte à rebours de la publicité
-        function startAdCountdown() {
-            timer = 5;
-            adTimer.textContent = timer;
-            closeAdModal.disabled = true;
-            closeAdModal.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحضير...';
-            
-            countdown = setInterval(() => {
-                timer--;
-                adTimer.textContent = timer;
-                
-                if (timer <= 0) {
-                    clearInterval(countdown);
-                    closeAdModal.disabled = false;
-                    closeAdModal.innerHTML = '<i class="fas fa-check"></i> عرض المحتوى';
-                }
-            }, 1000);
-        }
-        
-        // Fermer le modal et afficher les détails
-        closeAdModal.addEventListener('click', function() {
-            if (!closeAdModal.disabled) {
-                adModal.classList.remove('active');
-                document.body.style.overflow = '';
-                
-                // توجيه المستخدم إلى صفحة الفئة بعد مشاهدة الإعلان
-                setTimeout(() => {
-                    const categoryPages = {
-                        'internships': 'stages.html',
-                        'courses': 'formations.html'
-                    };
-                    
-                    const page = categoryPages[currentCategory];
-                    if (page) {
-                        window.location.href = page;
-                    }
-                }, 500);
-            }
-        });
-        
         // Animation des cartes au défilement
         const observerOptions = {
             threshold: 0.1,
@@ -1048,6 +920,22 @@
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(card);
         });
+
+        // Service Worker pour PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // AdMob
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </body>
 </html>
