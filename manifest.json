@@ -7,7 +7,7 @@
   "orientation": "any",
   "scope": "/",
   "short_name": "منحة لايف",
-  "start_url": "/https://minhat-livee.netlify.app/",
+  "start_url": "/",
   "theme_color": "#1a2a3a",
   "icons": [
     {
@@ -21,10 +21,5 @@
       "is256x256": false,
       "is192x192": false
     }
-  ],
-  "lang": "ar",
-  "categories": [
-    "business",
-    "education"
   ]
 }
