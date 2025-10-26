@@ -1,0 +1,26 @@
+{
+  "name": "minhat-live",
+  "version": "1.0.0",
+  "description": "منصة شاملة للمنح الدراسية، فرص التدريب، الوظائف والدورات التدريبية",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build completed'",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "education",
+    "scholarships",
+    "internships",
+    "jobs",
+    "courses",
+    "pwa"
+  ],
+  "author": "Minhat Live Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/minhat-live.git"
+  }
+}
