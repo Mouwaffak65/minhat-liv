@@ -1,0 +1,80 @@
+{
+  "name": "Minhat-live",
+  "short_name": "opportunities app",
+  "description": "",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "any",
+  "id": "",
+  "lang": "ar",
+  "dir": "auto",
+  "icons": [
+    {
+      "src": "blob:https://www.infyways.com/08c94e84-6ebb-448c-9f51-5266385a90fd",
+      "sizes": "72x72",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/463fc751-771c-434e-b9d7-da07c363ea7c",
+      "sizes": "96x96",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/08c7572b-3286-436f-806f-c9910c9747d7",
+      "sizes": "128x128",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/f4f3cf64-ce17-47a7-9003-021e375a1094",
+      "sizes": "144x144",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/55dbc9f1-40d2-4a1c-bb56-6ee29d847ca4",
+      "sizes": "152x152",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/4e90c533-6365-4ad3-838b-8b68ff87622c",
+      "sizes": "192x192",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/ed1dbcdc-28c8-488c-9265-a955285020c1",
+      "sizes": "384x384",
+      "type": "image/png",
+      "blob": {}
+    },
+    {
+      "src": "blob:https://www.infyways.com/adfa6d0c-843f-475e-838f-8bd1d67b64f0",
+      "sizes": "512x512",
+      "type": "image/png",
+      "blob": {}
+    }
+  ],
+  "screenshots": [],
+  "categories": [
+    "education"
+  ],
+  "protocol_handlers": [],
+  "related_applications": [],
+  "display_override": [],
+  "share_target": null,
+  "launch_handler": null,
+  "shortcuts": [
+    {
+      "name": "",
+      "short_name": "",
+      "url": ""
+    }
+  ],
+  "iarc_rating_id": "",
+  "background_color": "#c93232"
+}
