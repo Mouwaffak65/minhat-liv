@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منحة لايف - فرص المنح الدراسية، التدريب، الوظائف، الدورات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Styles pour la direction RTL */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* En-tête amélioré */
+        header {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+        }
+        
+        /* Logo amélioré */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-icon i {
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            color: #f39c12;
+            font-weight: 800;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #ecf0f1;
+            margin-top: 2px;
+        }
+        
+        /* Navigation améliorée */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .desktop-nav ul li {
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .desktop-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .desktop-nav ul li a i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .desktop-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .desktop-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            z-index: 1001;
+        }
+        
+        /* Menu mobile */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-nav ul li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .mobile-nav ul li a i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .mobile-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Bannière */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .banner p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #ecf0f1;
+        }
+        
+        /* Sections principales */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            position: relative;
+            font-size: 1.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #f39c12);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Catégories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 0;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-icon {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 20px;
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-card h3 {
+            padding: 18px 15px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        
+        .category-footer {
+            padding: 15px;
+            background: #f8f9fa;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #2980b9, #2573a7);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-ad {
+            background: linear-gradient(to right, #f39c12, #e67e22);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-ad:hover {
+            background: linear-gradient(to right, #e67e22, #d35400);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Bannières AdMob */
+        .ad-container {
+            margin: 2.5rem 0;
+            text-align: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px dashed #e0e0e0;
+        }
+        
+        .ad-banner {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-style: italic;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal de publicité */
+        .ad-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .ad-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-icon {
+            font-size: 3rem;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .modal-text {
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+        
+        .modal-timer {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        
+        /* Formulaire d'inscription */
+        .newsletter {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 3.5rem 1rem;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 18px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e67e22;
+        }
+        
+        /* Pied de page */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3.5rem 1rem 1.5rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: #f39c12;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #f39c12;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .social-icons a:hover {
+            background: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a6278;
+            color: #bdc3c7;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive - Corrections pour mobile */
+        @media (max-width: 1200px) {
+            .header-container, .container, .footer-content {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .banner p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .banner {
+                padding: 3rem 1rem;
+            }
+            
+            .banner h2 {
+                font-size: 1.6rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+            
+            .newsletter-form input {
+                border-radius: 12px 12px 0 0;
+                margin-bottom: 0;
+                padding: 14px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 0 0 12px 12px;
+                padding: 12px;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .categories {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0.6rem 1rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-icon i {
+                font-size: 1.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .banner {
+                padding: 2.5rem 1rem;
+            }
+            
+            .banner h2 {
+                font-size: 1.4rem;
+            }
+            
+            .banner p {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-icon {
+                padding: 18px;
+                font-size: 2rem;
+            }
+            
+            .category-card h3 {
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+            
+            .ad-container {
+                margin: 2rem 0;
+                padding: 15px;
+            }
+            
+            .ad-banner {
+                height: 70px;
+                font-size: 0.8rem;
+            }
+            
+            .newsletter {
+                padding: 2.5rem 1rem;
+            }
+            
+            footer {
+                padding: 2.5rem 1rem 1rem;
+            }
+            
+            .mobile-nav {
+                width: 250px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .logo-tagline {
+                display: none;
+            }
+            
+            .banner h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .newsletter-form input {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="rtl">
+    <!-- En-tête amélioré -->
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>منحة <span>لايف</span></h1>
+                    <div class="logo-tagline">بوابة فرصك التعليمية والمهنية</div>
+                </div>
+            </a>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li class="active"><a href="#home"><i class="fas fa-home"></i> <span>الرئيسية</span></a></li>
+                    <li><a href="bourses.html"><i class="fas fa-university"></i> <span>المنح الدراسية</span></a></li>
+                    <li><a href="stages.html"><i class="fas fa-briefcase"></i> <span>التدريب</span></a></li>
+                    <li><a href="jobs.html"><i class="fas fa-user-tie"></i> <span>الوظائف</span></a></li>
+                    <li><a href="formations.html"><i class="fas fa-laptop-code"></i> <span>الدورات</span></a></li>
+                    <li><a href="infos.html"><i class="fas fa-newspaper"></i> <span>الأخبار</span></a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>اتصل بنا</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-nav">
+        <ul>
+            <li class="active"><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="bourses.html"><i class="fas fa-university"></i> المنح الدراسية</a></li>
+            <li><a href="stages.html"><i class="fas fa-briefcase"></i> التدريب</a></li>
+            <li><a href="jobs.html"><i class="fas fa-user-tie"></i> الوظائف</a></li>
+            <li><a href="formations.html"><i class="fas fa-laptop-code"></i> الدورات</a></li>
+            <li><a href="infos.html"><i class="fas fa-newspaper"></i> الأخبار</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay pour fermer le menu -->
+    <div class="overlay"></div>
+
+    <!-- Bannière principale -->
+    <section class="banner" id="home">
+        <div class="container">
+            <h2>اكتشف أفضل الفرص التعليمية والمهنية</h2>
+            <p>منصة شاملة تجمع لك أحدث المنح الدراسية، فرص التدريب، الوظائف والدورات التدريبية من حول العالم</p>
+        </div>
+    </section>
+
+    <!-- Bannière AdMob -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner">
+                مساحة إعلانية - AdMob Banner
+            </div>
+        </div>
+    </div>
+
+    <!-- Catégories -->
+    <section class="container">
+        <h2 class="section-title">تصفح حسب الفئة</h2>
+        <div class="categories">
+            <!-- منح دراسية - مجانية -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>المنح الدراسية</h3>
+                <div class="category-footer">
+                    <a href="bourses.html" class="btn">عرض المنح <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+            
+            <!-- تدريب - مع إعلان -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>فرص التدريب</h3>
+                <div class="category-footer">
+                    <a href="stages.html" class="btn btn-ad show-ad-modal" data-category="internships">
+                        <i class="fas fa-play-circle"></i> شاهد إعلان لعرض التدريبات
+                    </a>
+                </div>
+            </div>
+            
+            <!-- وظائف - مجانية -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>الوظائف</h3>
+                <div class="category-footer">
+                    <a href="jobs.html" class="btn">عرض الوظائف <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+            
+            <!-- دورات - مع إعلان -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>الدورات التدريبية</h3>
+                <div class="category-footer">
+                    <a href="formations.html" class="btn btn-ad show-ad-modal" data-category="courses">
+                        <i class="fas fa-play-circle"></i> شاهد إعلان لعرض الدورات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bannière AdMob -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner">
+                مساحة إعلانية - AdMob Banner
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">اشترك في نشرتنا الإخبارية</h2>
+            <p>ابق على اطلاع بأحدث الفرص والمنح الدراسية والوظائف مباشرة في بريدك الإلكتروني</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="بريدك الإلكتروني">
+                <button>اشتراك <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de publicité -->
+    <div class="ad-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-ad"></i>
+            </div>
+            <h2 class="modal-title">إعلان تجاري</h2>
+            <p class="modal-text">
+                شاهد هذا الإعلان للوصول إلى محتوى الفئة
+            </p>
+            <div class="modal-timer">
+                الإعلان سينتهي خلال: <span id="ad-timer">5</span> ثواني
+            </div>
+            <button id="close-ad-modal" class="btn btn-primary" disabled>
+                <i class="fas fa-spinner fa-spin"></i> جاري التحضير...
+            </button>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>منحة لايف</h3>
+                <p>منصة شاملة تهدف إلى توفير أحدث الفرص التعليمية والمهنية للشباب العربي في مكان واحد.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+                    <li><a href="#scholarships"><i class="fas fa-angle-left"></i> المنح الدراسية</a></li>
+                    <li><a href="#internships"><i class="fas fa-angle-left"></i> التدريب</a></li>
+                    <li><a href="#jobs"><i class="fas fa-angle-left"></i> الوظائف</a></li>
+                    <li><a href="#courses"><i class="fas fa-angle-left"></i> الدورات</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>المساعدة</h3>
+                <ul>
+                    <li><a href="#faq"><i class="fas fa-angle-left"></i> الأسئلة الشائعة</a></li>
+                    <li><a href="#contact"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
+                    <li><a href="#privacy"><i class="fas fa-angle-left"></i> سياسة الخصوصية</a></li>
+                    <li><a href="#terms"><i class="fas fa-angle-left"></i> شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>   باراكو، دولة بنبن </a></li>
+                    <li><a href="mailto:minhatlive@gmail.com"><i class="fas fa-envelope"></i> minhatlive@gmail.com</a></li>
+                    <li><a href="tel:+2290140785782"><i class="fas fa-phone"></i> +229 0140785782</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; 2023 منحة لايف</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        // Ouvrir/fermer le menu mobile
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Fermer le menu en cliquant sur l'overlay
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Script pour les publicités
+        const adModal = document.querySelector('.ad-modal');
+        const showAdButtons = document.querySelectorAll('.show-ad-modal');
+        const closeAdModal = document.getElementById('close-ad-modal');
+        const adTimer = document.getElementById('ad-timer');
+        
+        let timer = 5;
+        let countdown;
+        let currentCategory = '';
+        
+        // Ouvrir le modal de publicité
+        showAdButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentCategory = this.getAttribute('data-category');
+                adModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                startAdCountdown();
+            });
+        });
+        
+        // Démarrer le compte à rebours de la publicité
+        function startAdCountdown() {
+            timer = 5;
+            adTimer.textContent = timer;
+            closeAdModal.disabled = true;
+            closeAdModal.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحضير...';
+            
+            countdown = setInterval(() => {
+                timer--;
+                adTimer.textContent = timer;
+                
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                    closeAdModal.disabled = false;
+                    closeAdModal.innerHTML = '<i class="fas fa-check"></i> عرض المحتوى';
+                }
+            }, 1000);
+        }
+        
+        // Fermer le modal et afficher les détails
+        closeAdModal.addEventListener('click', function() {
+            if (!closeAdModal.disabled) {
+                adModal.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // توجيه المستخدم إلى صفحة الفئة بعد مشاهدة الإعلان
+                setTimeout(() => {
+                    const categoryPages = {
+                        'internships': 'stages.html',
+                        'courses': 'formations.html'
+                    };
+                    
+                    const page = categoryPages[currentCategory];
+                    if (page) {
+                        window.location.href = page;
+                    }
+                }, 500);
+            }
+        });
+        
+        // Animation des cartes au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observer les cartes de catégories
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

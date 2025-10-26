@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الاستخدام - منحة لايف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Styles pour la direction RTL */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* En-tête amélioré */
+        header {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+        }
+        
+        /* Logo amélioré */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-icon i {
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            color: #f39c12;
+            font-weight: 800;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #ecf0f1;
+            margin-top: 2px;
+        }
+        
+        /* Navigation améliorée */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .desktop-nav ul li {
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .desktop-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .desktop-nav ul li a i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .desktop-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .desktop-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            z-index: 1001;
+        }
+        
+        /* Menu mobile */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-nav ul li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .mobile-nav ul li a i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .mobile-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Bannière page conditions */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .page-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ecf0f1;
+        }
+        
+        /* Sections principales */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        
+        .section-title {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #f39c12);
+            border-radius: 2px;
+        }
+        
+        /* Carte des conditions */
+        .terms-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            margin-bottom: 30px;
+        }
+        
+        .terms-header {
+            padding: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .terms-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .last-updated {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .terms-body {
+            padding: 30px;
+        }
+        
+        .terms-section {
+            margin-bottom: 30px;
+        }
+        
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f39c12;
+        }
+        
+        .terms-content {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .terms-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .terms-list li {
+            margin-bottom: 10px;
+            padding-right: 25px;
+            position: relative;
+        }
+        
+        .terms-list li:before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: #3498db;
+        }
+        
+        .important-note {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-right: 4px solid #f39c12;
+        }
+        
+        .note-title {
+            font-weight: 600;
+            color: #e67e22;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-right: 4px solid #27ae60;
+        }
+        
+        .contact-title {
+            font-weight: 600;
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Pied de page */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3.5rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: #f39c12;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #f39c12;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .social-icons a:hover {
+            background: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a6278;
+            color: #bdc3c7;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .header-container, .container, .footer-content {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .page-banner {
+                padding: 3rem 1rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-body {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .terms-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body class="rtl">
+    <!-- En-tête -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>منحة <span>لايف</span></h1>
+                    <div class="logo-tagline">بوابة فرصك التعليمية والمهنية</div>
+                </div>
+            </a>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a></li>
+                    <li><a href="bourses.html"><i class="fas fa-university"></i> <span>المنح الدراسية</span></a></li>
+                    <li><a href="stages.html"><i class="fas fa-briefcase"></i> <span>التدريب</span></a></li>
+                    <li><a href="jobs.html"><i class="fas fa-user-tie"></i> <span>الوظائف</span></a></li>
+                    <li><a href="formations.html"><i class="fas fa-laptop-code"></i> <span>الدورات</span></a></li>
+                    <li><a href="infos.html"><i class="fas fa-newspaper"></i> <span>الأخبار</span></a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>اتصل بنا</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="bourses.html"><i class="fas fa-university"></i> المنح الدراسية</a></li>
+            <li><a href="stages.html"><i class="fas fa-briefcase"></i> التدريب</a></li>
+            <li><a href="jobs.html"><i class="fas fa-user-tie"></i> الوظائف</a></li>
+            <li><a href="formations.html"><i class="fas fa-laptop-code"></i> الدورات</a></li>
+            <li><a href="infos.html"><i class="fas fa-newspaper"></i> الأخبار</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay pour fermer le menu -->
+    <div class="overlay"></div>
+
+    <!-- Bannière page conditions -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>شروط الاستخدام</h1>
+            <p>يرجى قراءة شروط الاستخدام بعناية قبل استخدام منصة منحة لايف</p>
+        </div>
+    </section>
+
+    <!-- Contenu principal -->
+    <section class="container">
+        <div class="terms-card">
+            <div class="terms-header">
+                <h2 class="terms-title">شروط استخدام منصة منحة لايف</h2>
+                <p class="last-updated">آخر تحديث: 07 أكتوبر 2025</p>
+            </div>
+            
+            <div class="terms-body">
+                <div class="terms-section">
+                    <h3 class="section-subtitle">1. القبول بالشروط</h3>
+                    <div class="terms-content">
+                        <p>باستخدامك لمنصة "منحة لايف" (المنصة)، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق على أي من هذه الشروط، فيرجى عدم استخدام المنصة.</p>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">2. وصف الخدمة</h3>
+                    <div class="terms-content">
+                        <p>منصة "منحة لايف" تقدم خدمات إلكترونية تشمل:</p>
+                        <ul class="terms-list">
+                            <li>تقديم معلومات عن المنح الدراسية والفرص التعليمية</li>
+                            <li>عرض فرص التدريب والوظائف</li>
+                            <li>تقديم دورات تدريبية وتطويرية</li>
+                            <li>نشر الأخبار والمقالات المتعلقة بالتعليم والتوظيف</li>
+                            <li>توفير أدوات للتقديم على الفرص المتاحة</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">3. استخدام المنصة</h3>
+                    <div class="terms-content">
+                        <p>للاستفادة من خدمات المنصة، يجب عليك:</p>
+                        <ul class="terms-list">
+                            <li>تقديم معلومات دقيقة وكاملة عند التقديم للفرص</li>
+                            <li>استخدام المنصة لأغراض قانونية ومشروعة فقط</li>
+                            <li>احترام حقوق الملكية الفكرية للمحتوى</li>
+                            <li>أن تكون مؤهلاً قانونياً للاستفادة من الخدمات المقدمة</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">4. حقوق الملكية الفكرية</h3>
+                    <div class="terms-content">
+                        <p>جميع المحتويات الموجودة على المنصة بما في ذلك النصوص، الصور، الشعارات، والتصاميم محمية بحقوق الملكية الفكرية. لا يحق لك:</p>
+                        <ul class="terms-list">
+                            <li>نسخ أو توزيع أو تعديل المحتوى دون إذن</li>
+                            <li>استخدام المحتوى لأغراض تجارية</li>
+                            <li>إزالة أي إشعارات حقوق ملكية</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">5. المسؤوليات والمحظورات</h3>
+                    <div class="terms-content">
+                        <p>يتعين على المستخدمين الالتزام بالتالي:</p>
+                        <ul class="terms-list">
+                            <li>عدم نشر محتوى مسيء أو غير قانوني</li>
+                            <li>عدم انتحال شخصية الآخرين</li>
+                            <li>عدم محاولة اختراق النظام</li>
+                            <li>عدم استخدام المنصة لأغراض احتيالية</li>
+                            <li>احترام حقوق الآخرين وخصوصيتهم</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">6. الخصوصية</h3>
+                    <div class="terms-content">
+                        <p>نحن نحمي خصوصيتك وفقاً لسياسة الخصوصية الخاصة بنا. باستخدامك للمنصة، فإنك توافق على جمع ومعالجة بياناتك الشخصية كما هو موضح في سياسة الخصوصية.</p>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">7. دقة المعلومات</h3>
+                    <div class="terms-content">
+                        <p>نحن نسعى لتقديم معلومات دقيقة وحديثة، لكننا لا نضمن دقة أو اكتمال أو موثوقية أي محتوى على المنصة. المستخدم يتحمل المسؤولية الكاملة عن التحقق من صحة المعلومات قبل الاعتماد عليها.</p>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">8. الروابط الخارجية</h3>
+                    <div class="terms-content">
+                        <p>قد تحتوي المنصة على روابط لمواقع خارجية. نحن لسنا مسؤولين عن محتوى أو ممارسات الخصوصية لهذه المواقع.</p>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">9. التعديلات والإلغاء</h3>
+                    <div class="terms-content">
+                        <p>نحتفظ بالحق في:</p>
+                        <ul class="terms-list">
+                            <li>تعديل هذه الشروط في أي وقت</li>
+                            <li>تعليق أو إلغاء الخدمة</li>
+                            <li>منع المستخدمين المخالفين من استخدام المنصة</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <h3 class="section-subtitle">10. حدود المسؤولية</h3>
+                    <div class="terms-content">
+                        <p>لا نتحمل المسؤولية عن:</p>
+                        <ul class="terms-list">
+                            <li>أي أضرار مباشرة أو غير مباشرة ناتجة عن استخدام المنصة</li>
+                            <li>فقدان البيانات أو الاختراقات الأمنية</li>
+                            <li>أي قرارات تتخذ بناءً على المعلومات المقدمة</li>
+                            <li>قبول أو رفض طلبات التقديم للفرص المعروضة</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="important-note">
+                    <div class="note-title">ملاحظة هامة</div>
+                    <p>نحن نعمل كوسيط بين المستخدمين ومقدمي الفرص. لا نتحمل مسؤولية قبول أو رفض طلبات التقديم، ولا نضمن حصول أي مستخدم على أي فرصة معروضة على المنصة.</p>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-title">للاستفسارات</div>
+                    <p>إذا كان لديك أي استفسارات حول هذه الشروط، يرجى الاتصال بنا عبر:</p>
+                    <p>البريد الإلكتروني: minhatlive@gmail.com</p>
+                    <p>هاتف: +229 0140785782</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>منحة لايف</h3>
+                <p>منصة شاملة تهدف إلى توفير أحدث الفرص التعليمية والمهنية للشباب العربي في مكان واحد.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+                    <li><a href="scholarships.html"><i class="fas fa-angle-left"></i> المنح الدراسية</a></li>
+                    <li><a href="internships.html"><i class="fas fa-angle-left"></i> التدريب</a></li>
+                    <li><a href="jobs.html"><i class="fas fa-angle-left"></i> الوظائف</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-left"></i> الدورات</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>المساعدة</h3>
+                <ul>
+                   <li><a href="#faq"><i class="fas fa-angle-left"></i> الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
+                    <li><a href="politic-de-confidencialité.html"><i class="fas fa-angle-left"></i> سياسة الخصوصية</a></li>
+                    <li><a href="conditions-d'itulisation.html"><i class="fas fa-angle-left"></i> شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>   باراكو، دولة بنبن </a></li>
+                    <li><a href="mailto:minhatlive@gmail.com"><i class="fas fa-envelope"></i> minhatlive@gmail.com</a></li>
+                    <li><a href="tel:+2290140785782"><i class="fas fa-phone"></i> +229 0140785782</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; 2023 منحة لايف</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        // Ouvrir/fermer le menu mobile
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Fermer le menu en cliquant sur l'overlay
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>

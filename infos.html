@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأخبار والمعلومات - منحة لايف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Styles pour la direction RTL */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* En-tête amélioré */
+        header {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+        }
+        
+        /* Logo amélioré */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-icon i {
+            font-size: 1.4rem;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            color: #f39c12;
+            font-weight: 800;
+        }
+        
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: #ecf0f1;
+            margin-top: 2px;
+        }
+        
+        /* Navigation améliorée */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .desktop-nav ul li {
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .desktop-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .desktop-nav ul li a i {
+            margin-left: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .desktop-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .desktop-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 6px;
+            z-index: 1001;
+        }
+        
+        /* Menu mobile */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-nav ul li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .mobile-nav ul li a i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .mobile-nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #f39c12;
+        }
+        
+        .mobile-nav ul li.active a {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Bannière page infos */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .page-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ecf0f1;
+        }
+        
+        /* Sections principales */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            position: relative;
+            font-size: 1.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #f39c12);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Grille des actualités */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Zone de texte بدلاً من الصور */
+        .news-text-header {
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+        }
+        
+        .news-text-header.free {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .news-text-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .news-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .news-badge.free {
+            background: #27ae60;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            display: flex;
+            align-items: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-date i {
+            margin-left: 8px;
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .news-excerpt {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .news-footer {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .btn-ad {
+            background: linear-gradient(to right, #f39c12, #e67e22);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-ad:hover {
+            background: linear-gradient(to right, #e67e22, #d35400);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-ad i {
+            font-size: 1rem;
+        }
+        
+        .btn-free {
+            background: linear-gradient(to right, #27ae60, #2ecc71);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-free:hover {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-save {
+            background: transparent;
+            border: none;
+            color: #7f8c8d;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .news-save:hover {
+            color: #e74c3c;
+        }
+        
+        /* Section conseils */
+        .tips-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 4px solid #3498db;
+        }
+        
+        .tip-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .tip-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .tip-text {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Bannières AdMob */
+        .ad-container {
+            margin: 2.5rem 0;
+            text-align: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px dashed #e0e0e0;
+        }
+        
+        .ad-banner {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-style: italic;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Section Voir Plus */
+        .load-more-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2980b9, #2573a7);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Modal de publicité */
+        .ad-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .ad-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-icon {
+            font-size: 3rem;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .modal-text {
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+        
+        .modal-timer {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        
+        /* Pied de page */
+        footer {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #f39c12;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: #f39c12;
+        }
+        
+        .footer-column p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-column ul li a i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #f39c12;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .header-container, .container, .footer-content {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .page-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .page-banner {
+                padding: 3rem 1rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-footer {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            
+            .news-text-header {
+                height: 150px;
+            }
+            
+            .news-text-header h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body class="rtl">
+    <!-- En-tête -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>منحة <span>لايف</span></h1>
+                    <div class="logo-tagline">بوابة فرصك التعليمية والمهنية</div>
+                </div>
+            </a>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a></li>
+                    <li><a href="bourses.html"><i class="fas fa-university"></i> <span>المنح الدراسية</span></a></li>
+                    <li><a href="stages.html"><i class="fas fa-briefcase"></i> <span>التدريب</span></a></li>
+                    <li><a href="jobs.html"><i class="fas fa-user-tie"></i> <span>الوظائف</span></a></li>
+                    <li><a href="formations.html"><i class="fas fa-laptop-code"></i> <span>الدورات</span></a></li>
+                    <li class="active"><a href="infos.html"><i class="fas fa-newspaper"></i> <span>الأخبار</span></a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> <span>اتصل بنا</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="bourses.html"><i class="fas fa-university"></i> المنح الدراسية</a></li>
+            <li><a href="stages.html"><i class="fas fa-briefcase"></i> التدريب</a></li>
+            <li><a href="jobs.html"><i class="fas fa-user-tie"></i> الوظائف</a></li>
+            <li><a href="formations.html"><i class="fas fa-laptop-code"></i> الدورات</a></li>
+            <li class="active"><a href="infos.html"><i class="fas fa-newspaper"></i> الأخبار</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay pour fermer le menu -->
+    <div class="overlay"></div>
+
+    <!-- Bannière page infos -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>الأخبار والمعلومات</h1>
+            <p>ابق على اطلاع بأحدث الأخبار والمستجدات في عالم التعليم والفرص المهنية</p>
+        </div>
+    </section>
+
+    <!-- Bannière AdMob -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner">
+                مساحة إعلانية - AdMob Banner
+            </div>
+        </div>
+    </div>
+
+    <!-- Liste des actualités -->
+    <section class="container">
+        <h2 class="section-title">آخر الأخبار والمستجدات</h2>
+        
+        <div class="news-grid">
+            <!-- Actualité 1 - Gratuite -->
+            <div class="news-card">
+                <div class="news-text-header free">
+                    <h3>نصائح احترافية لكتابة سيرة ذاتية ناجحة</h3>
+                    <span class="news-badge free">مجاني</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>15 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">نصائح لكتابة سيرة ذاتية ناجحة</h3>
+                    <p class="news-excerpt">
+                        دليل شامل لكتابة سيرة ذاتية احترافية تجذب انتباه مسؤولي التوظيف وتزيد من فرصك في الحصول على المقابلات الشخصية...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article1.html" class="btn btn-free">
+                        <i class="fas fa-book-open"></i>
+                        اقرأ المقال كاملاً
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Actualité 2 - Avec pub -->
+            <div class="news-card">
+                <div class="news-text-header">
+                    <h3>برنامج تدريب صيفي في شركة Google 2024</h3>
+                    <span class="news-badge">فرص تدريب</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>12 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">برنامج تدريب صيفي في شركة Google 2024</h3>
+                    <p class="news-excerpt">
+                        أطلقت شركة Google برنامج التدريب الصيفي للطلاب والخريجين في مجال التكنولوجيا والبرمجة...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article2.html" class="btn btn-ad">
+                        <i class="fas fa-play-circle"></i>
+                        شاهد إعلان لقراءة الخبر
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Actualité 3 - Gratuite -->
+            <div class="news-card">
+                <div class="news-text-header free">
+                    <h3>كيف تستعد للمقابلة الشخصية بنجاح</h3>
+                    <span class="news-badge free">مجاني</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>10 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">كيف تستعد للمقابلة الشخصية بنجاح</h3>
+                    <p class="news-excerpt">
+                        استعد للمقابلات الشخصية بتعلم كيفية الإجابة على الأسئلة الصعبة وإظهار أفضل ما لديك من مهارات وخبرات...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article3.html" class="btn btn-free">
+                        <i class="fas fa-book-open"></i>
+                        اقرأ المقال كاملاً
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Actualité 4 - Gratuite -->
+            <div class="news-card">
+                <div class="news-text-header free">
+                    <h3>أهم المهارات المطلوبة في سوق العمل 2024</h3>
+                    <span class="news-badge free">مجاني</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>8 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">أهم المهارات المطلوبة في سوق العمل 2024</h3>
+                    <p class="news-excerpt">
+                        تعرف على أهم المهارات التقنية والشخصية التي يبحث عنها أصحاب العمل في المرشحين للوظائف...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article4.html" class="btn btn-free">
+                        <i class="fas fa-book-open"></i>
+                        اقرأ المقال كاملاً
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Actualité 5 - Avec pub -->
+            <div class="news-card">
+                <div class="news-text-header">
+                    <h3>فتح باب التقديم لمنحة الحكومة التركية 2024</h3>
+                    <span class="news-badge">منح دراسية</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>5 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">فتح باب التقديم لمنحة الحكومة التركية 2024</h3>
+                    <p class="news-excerpt">
+                        أعلنت الحكومة التركية عن فتح باب التقديم للمنح الدراسية للطلاب الدوليين للعام الدراسي 2024-2025...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article5.html" class="btn btn-ad">
+                        <i class="fas fa-play-circle"></i>
+                        شاهد إعلان لقراءة الخبر
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Actualité 6 - Gratuite -->
+            <div class="news-card">
+                <div class="news-text-header free">
+                    <h3>دليل شامل للدراسة في الخارج</h3>
+                    <span class="news-badge free">مجاني</span>
+                </div>
+                
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-clock"></i>
+                        <span>3 نوفمبر 2023</span>
+                    </div>
+                    <h3 class="news-title">دليل شامل للدراسة في الخارج</h3>
+                    <p class="news-excerpt">
+                        كل ما تحتاج معرفته عن إجراءات الدراسة في الخارج، من اختيار الجامعة إلى تأشيرة الطالب والإقامة...
+                    </p>
+                </div>
+                
+                <div class="news-footer">
+                    <a href="article6.html" class="btn btn-free">
+                        <i class="fas fa-book-open"></i>
+                        اقرأ المقال كاملاً
+                    </a>
+                    <button class="news-save">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section Voir Plus -->
+        <div class="load-more-section">
+            <button id="load-more-btn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> عرض المزيد من الأخبار
+            </button>
+        </div>
+    </section>
+
+    <!-- Bannière AdMob -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner">
+                مساحة إعلانية - AdMob Banner
+            </div>
+        </div>
+    </div>
+
+    <!-- Section conseils -->
+    <section class="container">
+        <div class="tips-section">
+            <h2 class="section-title">نصائح وإرشادات مهنية</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="tip-title">كتابة السيرة الذاتية</h3>
+                    <p class="tip-text">
+                        تعلم كيفية كتابة سيرة ذاتية احترافية تجذب انتباه مسؤولي التوظيف وتزيد من فرصك في المقابلات الشخصية.
+                    </p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="tip-title">مهارات المقابلة</h3>
+                    <p class="tip-text">
+                        استعد للمقابلات الشخصية بتعلم كيفية الإجابة على الأسئلة الصعبة وإظهار أفضل ما لديك من مهارات.
+                    </p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="tip-title">التواصل الشبكي</h3>
+                    <p class="tip-text">
+                        بناء شبكة علاقات مهنية قوية يمكن أن تفتح لك أبواب فرص عمل وشراكات جديدة في مجالك.
+                    </p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="tip-title">تطوير المهارات</h3>
+                    <p class="tip-text">
+                        استمر في تطوير مهاراتك وتعلم تقنيات جديدة لتبقى منافساً في سوق العمل المتغير باستمرار.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de publicité -->
+    <div class="ad-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-ad"></i>
+            </div>
+            <h2 class="modal-title">إعلان تجاري</h2>
+            <p class="modal-text">
+                شاهد هذا الإعلان لقراءة الخبر الكامل
+            </p>
+            <div class="modal-timer">
+                الإعلان سينتهي خلال: <span id="ad-timer">5</span> ثواني
+            </div>
+            <button id="close-ad-modal" class="btn btn-primary" disabled>
+                <i class="fas fa-spinner fa-spin"></i> جاري التحضير...
+            </button>
+        </div>
+    </div>
+
+    <!-- Bannière AdMob -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="ad-banner">
+                مساحة إعلانية - AdMob Banner
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>منحة لايف</h3>
+                <p>منصة شاملة تهدف إلى توفير أحدث الفرص التعليمية والمهنية للشباب العربي في مكان واحد.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+                    <li><a href="scholarships.html"><i class="fas fa-angle-left"></i> المنح الدراسية</a></li>
+                    <li><a href="internships.html"><i class="fas fa-angle-left"></i> التدريب</a></li>
+                    <li><a href="jobs.html"><i class="fas fa-angle-left"></i> الوظائف</a></li>
+                    <li><a href="courses.html"><i class="fas fa-angle-left"></i> الدورات</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>المساعدة</h3>
+                <ul>
+                    <li><a href="#faq"><i class="fas fa-angle-left"></i> الأسئلة الشائعة</a></li>
+                    <li><a href="contact.html"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
+                    <li><a href="politic-de-confidencialité.html"><i class="fas fa-angle-left"></i> سياسة الخصوصية</a></li>
+                    <li><a href="conditions-d'itulisation.html"><i class="fas fa-angle-left"></i> شروط الاستخدام</a></li>>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i>   باراكو، دولة بنبن </a></li>
+                    <li><a href="mailto:minhatlive@gmail.com"><i class="fas fa-envelope"></i> minhatlive@gmail.com</a></li>
+                    <li><a href="tel:+2290140785782"><i class="fas fa-phone"></i> +229 0140785782</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; 2023 منحة لايف</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        
+        // Ouvrir/fermer le menu mobile
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Fermer le menu en cliquant sur l'overlay
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Script pour les favoris
+        const saveButtons = document.querySelectorAll('.news-save');
+        saveButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    icon.style.color = '#e74c3c';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    icon.style.color = '#7f8c8d';
+                }
+            });
+        });
+        
+        // Script pour les publicités
+        const adModal = document.querySelector('.ad-modal');
+        const showAdButtons = document.querySelectorAll('.btn-ad');
+        const closeAdModal = document.getElementById('close-ad-modal');
+        const adTimer = document.getElementById('ad-timer');
+        
+        let timer = 5;
+        let countdown;
+        let currentArticleUrl = '';
+        
+        // Ouvrir le modal de publicité
+        showAdButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentArticleUrl = this.getAttribute('href');
+                adModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                startAdCountdown();
+            });
+        });
+        
+        // Démarrer le compte à rebours de la publicité
+        function startAdCountdown() {
+            timer = 5;
+            adTimer.textContent = timer;
+            closeAdModal.disabled = true;
+            closeAdModal.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحضير...';
+            
+            countdown = setInterval(() => {
+                timer--;
+                adTimer.textContent = timer;
+                
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                    closeAdModal.disabled = false;
+                    closeAdModal.innerHTML = '<i class="fas fa-check"></i> قراءة الخبر';
+                }
+            }, 1000);
+        }
+        
+        // Fermer le modal et afficher les détails
+        closeAdModal.addEventListener('click', function() {
+            if (!closeAdModal.disabled) {
+                adModal.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                // Rediriger vers صفحة المقال بعد مشاهدة الإعلان
+                setTimeout(() => {
+                    window.location.href = currentArticleUrl;
+                }, 500);
+            }
+        });
+        
+        // Simulation du chargement de contenu supplémentaire
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        loadMoreBtn.addEventListener('click', function() {
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحميل...';
+            loadMoreBtn.disabled = true;
+            
+            // Simuler un chargement
+            setTimeout(() => {
+                alert('تم تحميل 6 أخبار إضافية بنجاح!');
+                loadMoreBtn.innerHTML = '<i class="fas fa-check"></i> تم التحميل';
+                
+                // Réinitialiser après 2 secondes
+                setTimeout(() => {
+                    loadMoreBtn.innerHTML = '<i class="fas fa-plus"></i> عرض المزيد من الأخبار';
+                    loadMoreBtn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
