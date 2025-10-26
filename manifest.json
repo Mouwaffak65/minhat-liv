@@ -1,80 +1,171 @@
 {
-  "name": "Minhat-live",
-  "short_name": "opportunities app",
-  "description": "",
-  "display": "standalone",
+  "name": "منحة لايف - Minhat Live",
+  "short_name": "منحة لايف",
+  "description": "منصة شاملة للمنح الدراسية، فرص التدريب، الوظائف والدورات التدريبية للشباب العربي",
   "start_url": "/",
-  "scope": "/",
-  "orientation": "any",
-  "id": "",
-  "lang": "ar",
-  "dir": "auto",
+  "id": "/",
+  
   "icons": [
     {
-      "src": "blob:https://www.infyways.com/08c94e84-6ebb-448c-9f51-5266385a90fd",
-      "sizes": "72x72",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/463fc751-771c-434e-b9d7-da07c363ea7c",
-      "sizes": "96x96",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/08c7572b-3286-436f-806f-c9910c9747d7",
-      "sizes": "128x128",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/f4f3cf64-ce17-47a7-9003-021e375a1094",
-      "sizes": "144x144",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/55dbc9f1-40d2-4a1c-bb56-6ee29d847ca4",
-      "sizes": "152x152",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/4e90c533-6365-4ad3-838b-8b68ff87622c",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>",
       "sizes": "192x192",
-      "type": "image/png",
-      "blob": {}
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     },
     {
-      "src": "blob:https://www.infyways.com/ed1dbcdc-28c8-488c-9265-a955285020c1",
-      "sizes": "384x384",
-      "type": "image/png",
-      "blob": {}
-    },
-    {
-      "src": "blob:https://www.infyways.com/adfa6d0c-843f-475e-838f-8bd1d67b64f0",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>",
       "sizes": "512x512",
-      "type": "image/png",
-      "blob": {}
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231a2a3a'/><text y='.9em' font-size='90' fill='white'>🎓</text></svg>",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
-  "screenshots": [],
-  "categories": [
-    "education"
+
+  "background_color": "#ffffff",
+  "theme_color": "#1a2a3a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720' viewBox='0 0 1280 720'><rect width='1280' height='720' fill='%231a2a3a'/><text x='640' y='360' font-family='Arial' font-size='48' fill='white' text-anchor='middle'>منحة لايف - الشاشة الرئيسية</text></svg>",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "الصفحة الرئيسية"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='750' height='1334' viewBox='0 0 750 1334'><rect width='750' height='1334' fill='%231a2a3a'/><text x='375' y='667' font-family='Arial' font-size='32' fill='white' text-anchor='middle'>منحة لايف - الجوال</text></svg>",
+      "sizes": "750x1334",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "نسخة الجوال"
+    }
   ],
-  "protocol_handlers": [],
-  "related_applications": [],
-  "display_override": [],
-  "share_target": null,
-  "launch_handler": null,
+
+  "categories": ["education", "business", "productivity"],
+  
   "shortcuts": [
     {
-      "name": "",
-      "short_name": "",
-      "url": ""
+      "name": "المنح الدراسية",
+      "short_name": "المنح",
+      "description": "تصفح أحدث المنح الدراسية",
+      "url": "/bourses.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%233498db' rx='16'/><text x='48' y='60' font-size='48' fill='white' text-anchor='middle'>🎓</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "فرص التدريب",
+      "short_name": "التدريب",
+      "description": "اكتشف فرص التدريب المتاحة",
+      "url": "/stages.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%23f39c12' rx='16'/><text x='48' y='60' font-size='48' fill='white' text-anchor='middle'>💼</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "الوظائف",
+      "short_name": "الوظائف",
+      "description": "ابحث عن الوظائف المناسبة",
+      "url": "/jobs.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%2327ae60' rx='16'/><text x='48' y='60' font-size='48' fill='white' text-anchor='middle'>👔</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "الدورات",
+      "short_name": "الدورات",
+      "description": "استكشف الدورات التدريبية",
+      "url": "/formations.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%239b59b6' rx='16'/><text x='48' y='60' font-size='48' fill='white' text-anchor='middle'>📚</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
     }
   ],
-  "iarc_rating_id": "",
-  "background_color": "#c93232"
+
+  "share_target": {
+    "action": "/share.html",
+    "method": "GET",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link"
+    }
+  },
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+minhat",
+      "url": "/open?url=%s"
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": "auto"
+  },
+
+  "display_override": ["window-controls-overlay", "standalone"],
+
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+
+  "prefer_related_applications": false,
+  "related_applications": [],
+
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/msword": [".doc", ".docx"]
+      }
+    }
+  ],
+
+  "note_taking": {
+    "new_note_url": "/new-note"
+  },
+
+  "widgets": [
+    {
+      "name": "أحدث المنح",
+      "tag": "scholarships",
+      "template": "https://minhatlive.com/widgets/scholarships",
+      "ms_ac_template": "https://minhatlive.com/widgets/scholarships"
+    }
+  ],
+
+  "scope_extensions": [
+    {
+      "origin": "https://minhatlive.com"
+    }
+  ],
+
+  "iarc_rating_id": "e58bcf2c-9f38-4af4-ba42-3123556c69aa"
 }
